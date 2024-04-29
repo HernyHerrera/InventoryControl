@@ -13,7 +13,7 @@ public class Provider implements Serializable {
     private Long id;
     private String nif;
     @Column(name= "business_name")
-    private String name;
+    private String businessName;
     private String phone;
     private String email;
     private String address;

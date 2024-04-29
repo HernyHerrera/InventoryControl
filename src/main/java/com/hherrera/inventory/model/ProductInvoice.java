@@ -13,8 +13,8 @@ public class ProductInvoice implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int quantity;
-    @Column(name= "id_invoice")
-    private Long idInvoice;
-    @Column(name= "id_product")
-    private Long idProduct;
+    @Column(name= "invoice_number")
+    private Integer invoiceNumber;
+    @Column(name= "product_code")
+    private Integer productCode;
 }

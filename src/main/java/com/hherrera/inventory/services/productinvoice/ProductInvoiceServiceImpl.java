@@ -16,6 +16,8 @@ import java.util.List;
 public class ProductInvoiceServiceImpl implements IProductInvoiceService{
     @Autowired
     private IProductInvoiceDao productInvoiceDao;
+
+    /** search all productInvoices  **/
     @Override
     @Transactional(readOnly = true)
     public ResponseEntity<ProductInvoiceResponseRest> search() {
@@ -32,6 +34,8 @@ public class ProductInvoiceServiceImpl implements IProductInvoiceService{
         }
         return new ResponseEntity<ProductInvoiceResponseRest>(response, HttpStatus.OK);
     }
+
+    /** save productInvoice  **/
     @Override
     @Transactional
     public ResponseEntity<ProductInvoiceResponseRest> save(ProductInvoice productInvoice) {

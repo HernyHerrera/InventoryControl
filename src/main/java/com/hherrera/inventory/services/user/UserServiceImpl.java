@@ -16,6 +16,8 @@ import java.util.Optional;
 public class UserServiceImpl implements IUserService{
     @Autowired
     private IUserDao userDao;
+
+    /** search all users **/
     @Override
     @Transactional(readOnly = true)
     public ResponseEntity<UserResponseRest> search() {
@@ -33,6 +35,7 @@ public class UserServiceImpl implements IUserService{
         return new ResponseEntity<UserResponseRest>(response, HttpStatus.OK);
     }
 
+    /** get user by id **/
     @Override
     @Transactional(readOnly = true)
     public ResponseEntity<UserResponseRest> searchById(Long id) {
@@ -57,6 +60,7 @@ public class UserServiceImpl implements IUserService{
         return new ResponseEntity<UserResponseRest>(response, HttpStatus.OK);
     }
 
+    /** save user **/
     @Override
     @Transactional
     public ResponseEntity<UserResponseRest> save(User user) {
@@ -81,6 +85,7 @@ public class UserServiceImpl implements IUserService{
         return new ResponseEntity<UserResponseRest>(response, HttpStatus.OK);
     }
 
+    /** delete user by id **/
     @Override
     @Transactional
     public ResponseEntity<UserResponseRest> deleteById(Long id) {

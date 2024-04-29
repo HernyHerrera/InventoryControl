@@ -6,9 +6,9 @@ import com.hherrera.inventory.services.productinvoice.IProductInvoiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+@CrossOrigin(origins={"http://localhost:4200"})
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/inventory")
 public class ProductInvoiceRestController {
     @Autowired
     private IProductInvoiceService service;
@@ -22,16 +22,14 @@ public class ProductInvoiceRestController {
         ResponseEntity<ProductInvoiceResponseRest> response = service.search();
         return response;
     }
+    /**
+     * Save
+     * @param productInvoice
+     * @return response
+     * */
     @PostMapping("/productinvoices")
     public ResponseEntity<ProductInvoiceResponseRest> save(@RequestBody ProductInvoice productInvoice){
         ResponseEntity<ProductInvoiceResponseRest> response = service.save(productInvoice);
         return response;
     }
-    /**
-     * Update categogy
-     * @param category
-     * @param id
-     * @return response
-     * */
-
 }

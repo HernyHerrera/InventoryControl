@@ -13,7 +13,7 @@ public class Invoice implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "invoice_number")
-    private int number;
+    private int invoiceNumber;
     @Column(name= "emission_date")
     private Date emissionDate;
     @Column(name= "cancel_date")

@@ -4,6 +4,6 @@ import com.hherrera.inventory.response.ResponseRest;
 import lombok.Data;
 
 @Data
-public class CategoryResponseRest extends ResponseRest {
+public class CategoryResponseRest {
     private CategoryResponse categoryResponse = new CategoryResponse();
 }

@@ -17,6 +17,7 @@ import java.util.Optional;
 public class CategoryServiceImpl implements ICategoryService{
     @Autowired
     private ICategoryDao categoryDao;
+    /** search all categories**/
     @Override
     @Transactional(readOnly = true)
     public ResponseEntity<CategoryResponseRest> search() {
@@ -32,7 +33,7 @@ public class CategoryServiceImpl implements ICategoryService{
         }
         return new ResponseEntity<CategoryResponseRest>(response, HttpStatus.OK);
     }
-
+    /** search categories by id **/
     @Override
     @Transactional(readOnly = true)
     public ResponseEntity<CategoryResponseRest> searchById(Long id) {
