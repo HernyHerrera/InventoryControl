@@ -18,7 +18,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-@CrossOrigin(origins={"http://localhost:4200"})
+@CrossOrigin(origins={"*"})
 @RestController
 @RequestMapping("/inventory")
 public class ProductRestController {
@@ -87,10 +87,15 @@ public class ProductRestController {
         }
 
     }
-
+    /** Generate PDF report
+     * @param response
+     * @param code
+     * @param id
+     * **/
     @GetMapping("/productslist/pdf")
     @ResponseBody
     public void exportReportPdf(HttpServletResponse response, Long id, Integer code) throws IOException {
+
         response.setContentType("application/pdf");
         DateFormat format = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
         String today = format.format(new Date());
@@ -98,14 +103,10 @@ public class ProductRestController {
         String value = "attachment; filename=Report_" + today+".pdf";
         response.setHeader(header, value);
         List<ProductResponseData> products = service.getProducts(id, code);
-
         StockPdf exportNewPdf = new StockPdf(products);
-
         exportNewPdf.exportReport(response);
 
     }
-
-
     /**
      * Update product
      * @param product

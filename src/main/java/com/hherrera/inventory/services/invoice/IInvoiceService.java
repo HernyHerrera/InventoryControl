@@ -3,7 +3,6 @@ package com.hherrera.inventory.services.invoice;
 import com.hherrera.inventory.model.Invoice;
 import com.hherrera.inventory.response.invoice.InvoiceResponseData;
 import com.hherrera.inventory.response.invoice.InvoiceResponseRest;
-import com.hherrera.inventory.response.product.ProductResponseData;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;

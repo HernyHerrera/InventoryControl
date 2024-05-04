@@ -3,7 +3,6 @@ package com.hherrera.inventory.controller;
 import com.hherrera.inventory.model.Invoice;
 import com.hherrera.inventory.response.invoice.InvoiceResponseData;
 import com.hherrera.inventory.response.invoice.InvoiceResponseRest;
-import com.hherrera.inventory.response.product.ProductResponseData;
 import com.hherrera.inventory.services.invoice.IInvoiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins={"http://localhost:4200"})
+@CrossOrigin(origins={"*"})
 @RestController
 @RequestMapping("/inventory")
 public class InvoiceRestController {

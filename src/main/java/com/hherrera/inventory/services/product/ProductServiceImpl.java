@@ -1,21 +1,16 @@
 package com.hherrera.inventory.services.product;
-
 import com.hherrera.inventory.dao.IProductDao;
 import com.hherrera.inventory.model.Product;
 import com.hherrera.inventory.response.product.ProductResponseData;
 import com.hherrera.inventory.response.product.ProductResponseRest;
-import jakarta.annotation.Resource;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -169,6 +164,7 @@ public class ProductServiceImpl implements IProductService {
         }
         return new ResponseEntity<ProductResponseRest>(response, HttpStatus.OK);
     }
+    /** update product stock**/
     @Override
     @Transactional
     public boolean updateQuantity(Integer code, Integer quantity){
@@ -187,19 +183,6 @@ public class ProductServiceImpl implements IProductService {
         }finally {
             return ok;
         }
-
-       /** try{
-            String queryString = "update product set stock= stock '+' " + quantity + " where product_code=" + code;
-            Query query= entityManager.createQuery(queryString);
-            query.executeUpdate();
-            ok = true;
-        }catch (Exception exception) {
-            exception.getMessage();
-            ok = false;
-        }
-        finally {
-            return ok;
-        }**/
     }
 
     /** delete product by id**/

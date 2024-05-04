@@ -1,9 +1,7 @@
 package com.hherrera.inventory.services.provider;
 
 import com.hherrera.inventory.dao.IProviderDao;
-import com.hherrera.inventory.model.Product;
 import com.hherrera.inventory.model.Provider;
-import com.hherrera.inventory.response.provider.ProviderResponse;
 import com.hherrera.inventory.response.provider.ProviderResponseRest;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;

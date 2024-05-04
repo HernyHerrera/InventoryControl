@@ -1,6 +1,5 @@
 package com.hherrera.inventory.controller;
 
-import com.hherrera.inventory.model.Product;
 import com.hherrera.inventory.model.Provider;
 import com.hherrera.inventory.response.provider.ProviderResponseRest;
 import com.hherrera.inventory.services.provider.IProviderService;
@@ -9,7 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins={"http://localhost:4200"})
+@CrossOrigin(origins={"*"})
 @RestController
 @RequestMapping("/inventory")
 public class ProviderResController {
